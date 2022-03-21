@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Title</title>
+	<link rel="stylesheet" type="text/css" href="{{ base_url() }}/css/app.css">
+</head>
+<body>
+
+	{% include 'templates/partials/header.twig' %}
+
+	<div>
+		<!-- Starts dinamic counter from router -->
+
+		{% block  content %} {% endblock %}
+
+		<!-- Ends dinamic content from router -->
+
+
+	</div>
+
+	{% include 'templates/partials/footer.twig' %}
+
+</body>
+<script type="text/javascript" src="{{ base_url() }}/js/script.js"></script>
+</html>
