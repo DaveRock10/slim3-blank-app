@@ -24,9 +24,6 @@
 
 	]);
 
-
-	require __DIR__ . '/../app/routes.php';
-
 	$container = $app->getContainer();
 
 	$capsule = new \Illuminate\Database\Capsule\Manager;
@@ -43,6 +40,11 @@
 
 	};
 
+	$container['flash'] = function($container) {
+
+		return new \Slim\Flash\Messages();
+
+	};
 
 	$container['view'] = function($container){
 
@@ -69,3 +71,6 @@
 		return new \App\Controllers\HomeController($container);
 
 	};
+
+
+	require __DIR__ . '/../app/routes.php';
